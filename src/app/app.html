@@ -1,1 +1,15 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mycontent">
+    <ion-header>
+        <ion-title>Menu</ion-title>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-item *ngFor="let item of ['Uno', 'Dos', 'Tres']; let i = index;"
+            class="animated fadeInLeft">
+                Item {{ item }}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

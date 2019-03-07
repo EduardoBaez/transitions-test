@@ -1,6 +1,9 @@
-import { Component } from '@angular/core'
+import { Component, ViewChild, ElementRef, Renderer2 } from '@angular/core'
 import { IonicPage, NavController, NavParams } from 'ionic-angular'
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+
+import anime from 'animejs'
+import { Flip } from 'number-flip'
 
 @IonicPage()
 @Component({
@@ -9,7 +12,10 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private nativePageTransitions: NativePageTransitions) {
+  @ViewChild('box') box: ElementRef
+  @ViewChild('numerBtn', { read: ElementRef}) private numberBtn: ElementRef
+  flipAnim = null
+  constructor(public navCtrl: NavController, public navParams: NavParams, private nativePageTransitions: NativePageTransitions, private renderer: Renderer2) {
 
   }
 
@@ -17,7 +23,7 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage')
   }
 
-  slidePage() {
+  slidePage = () => {
     let options: NativeTransitionOptions = {
       direction: 'left',
       duration: 600,
@@ -26,10 +32,10 @@ export class HomePage {
      };
  
     this.nativePageTransitions.slide(options)
-    this.navCtrl.setRoot('SecondPage')
+    this.navCtrl.push('SecondPage')
   }
  
-  flipPage() {
+  flipPage = () => {
     let options: NativeTransitionOptions = {
       direction: 'up',
       duration: 600
@@ -39,17 +45,64 @@ export class HomePage {
     this.navCtrl.push('SecondPage');
   }
  
-  fadePage() {
+  fadePage = () => {
     this.nativePageTransitions.fade(null);
-    this.navCtrl.setRoot('SecondPage');
+    this.navCtrl.push('SecondPage');
   }
  
-  curlPage() {
+  curlPage = () => {
     let options: NativeTransitionOptions = {
       direction: 'up',
       duration: 600
      };
     this.nativePageTransitions.curl(options);
-    this.navCtrl.setRoot('SecondPage');
+    this.navCtrl.push('SecondPage');
+  }
+
+  callAnime = () => {
+    console.log('callAnime');
+    
+    anime({
+      targets: '.animate-me',
+      translateX: [
+        { value: 100, duration: 1200},
+        { value: 0, duration: 800},
+      ],
+      borderRadius: [
+        { value: 8, duration: 1000},
+        { value: 0, duration: 1000},
+      ],
+      rotate: '0turn',
+      backgroundColor: '#ffffff',
+      duration: 1800,
+    });
+  }
+
+  doMagic = () => {
+    console.log("doMagic");
+    this.renderer.addClass(this.box.nativeElement, "perspectiveDown")
+  }
+
+  flip = () => {
+    if (!this.flipAnim) {
+      this.flipAnim = new Flip({
+        node: this.numberBtn.nativeElement,
+        from: '9999',
+      })
+    }
+
+    this.flipAnim.flipTo({
+      to: Math.floor((Math.random() * 1000) + 1)
+    })
+  }
+
+  animateItems = () => {
+    console.log("animateItems");
+    
+  }
+
+  bounce = () => {
+    console.log("Bounce");
+    
   }
 }
