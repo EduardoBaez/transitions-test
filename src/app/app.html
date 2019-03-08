@@ -1,4 +1,4 @@
-<ion-menu [content]="mycontent">
+<ion-menu [content]="mycontent" type="overlay">
     <ion-header>
         <ion-toolbar>
             <ion-title>Menu</ion-title>
@@ -7,7 +7,7 @@
     <ion-content>
         <ion-list>
             <ion-item menuClose detailNone *ngFor="let item of routesSideMenu; let i = index;"
-            class="animated slideInLeft item item-block item-ios" [style.animation-delay]="(i * 3)+'00ms'" (click)="goTo(item)">
+            class="animated slideInLeft item item-block item-ios" [style.animation-delay]="(i * 2)+'00ms'" (click)="goTo(item)">
                 {{ item.title }}
             </ion-item>
         </ion-list>

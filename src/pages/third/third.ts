@@ -8,12 +8,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ThirdPage {
 
-
+  public type
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.type = navParams.get('type')
   }
 
-  ionViewDidLoad() {}
+  ionViewDidLoad() {
+    console.log(this.type)
+  }
 
+  goBack = () => {
+    this.navCtrl.pop()
+  }
 
 }

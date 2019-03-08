@@ -3,13 +3,12 @@
     <ion-buttons slot="start">
         <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
     </ion-buttons>
-    <ion-title>Transiciones</ion-title>
+    <h1 text-center>Transiciones</h1>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="animated zoomIn">
-  <div class="transitions-screen">
-    <h6 class="white">Transiciones entre Pantallas</h6>
+<ion-content padding>
+  <div class="transitions-screen animated fadeInUp">
     <button ion-button full round large (click)="slidePage()">Slide</button><br>
     <button ion-button full round large (click)="flipPage()">Flip</button><br>
     <button ion-button full round large (click)="fadePage()">Fade</button><br>

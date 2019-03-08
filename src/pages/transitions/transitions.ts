@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
 
-
 @IonicPage()
 @Component({
   selector: 'page-transitions',
@@ -25,7 +24,7 @@ export class TransitionsPage {
      };
  
     this.nativePageTransitions.slide(options)
-    this.navCtrl.push('SecondPage')
+    this.navCtrl.push('SecondPage', {type: 'slide'})
   }
  
   flipPage = () => {
@@ -35,12 +34,12 @@ export class TransitionsPage {
      };
  
     this.nativePageTransitions.flip(options);
-    this.navCtrl.push('SecondPage');
+    this.navCtrl.push('SecondPage', {type: 'flip'});
   }
  
   fadePage = () => {
     this.nativePageTransitions.fade(null);
-    this.navCtrl.push('SecondPage');
+    this.navCtrl.push('SecondPage', {type: 'fade'});
   }
  
   curlPage = () => {
@@ -49,8 +48,7 @@ export class TransitionsPage {
       duration: 600
      };
     this.nativePageTransitions.curl(options);
-    this.navCtrl.push('SecondPage');
+    this.navCtrl.push('SecondPage', {type: 'curl'});
   }
-
 
 }
