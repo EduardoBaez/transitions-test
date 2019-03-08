@@ -1,12 +1,14 @@
 <ion-menu [content]="mycontent">
     <ion-header>
-        <ion-title>Menu</ion-title>
+        <ion-toolbar>
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
     </ion-header>
     <ion-content>
         <ion-list>
-            <ion-item *ngFor="let item of ['Uno', 'Dos', 'Tres']; let i = index;"
-            class="animated fadeInLeft">
-                Item {{ item }}
+            <ion-item menuClose detailNone *ngFor="let item of routesSideMenu; let i = index;"
+            class="animated slideInLeft item item-block item-ios" [style.animation-delay]="(i * 3)+'00ms'" (click)="goTo(item)">
+                {{ item.title }}
             </ion-item>
         </ion-list>
     </ion-content>

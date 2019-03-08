@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the SecondPage page.
+ * Generated class for the FormsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,14 +10,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-second',
-  templateUrl: 'second.html',
+  selector: 'page-forms',
+  templateUrl: 'forms.html',
 })
-export class SecondPage {
+export class FormsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {}
+  ionViewDidLoad() { }
 
 }

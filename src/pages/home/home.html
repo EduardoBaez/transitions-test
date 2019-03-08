@@ -3,39 +3,10 @@
     <ion-buttons slot="start">
         <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
     </ion-buttons>
-    <ion-title>Transiciones</ion-title>
+    <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <div class="transitions-screen">
-    <h6>Transiciones entre Pantallas</h6>
-    <button ion-button full round (click)="slidePage()">Slide</button>
-    <button ion-button full round (click)="flipPage()">Flip</button>
-    <button ion-button full round (click)="fadePage()">Fade</button>
-    <button ion-button full round (click)="curlPage()">Curl</button>
-  </div>
-  <br>
-  <div class="animations-lib">
-    <h6 class="white">Animaciones</h6>
-    <button ion-button full round (click)="callAnime()">Anime.js</button>
-    <button ion-button full round (click)="doMagic()">Magic CSS</button>
-    <button ion-button full round (click)="flip()">Number Flip</button>
-    <button ion-button full round (click)="animateItems()">Animate.css</button>
-    <button ion-button full round (click)="bounce()" #bouncebtn>Bounce</button>
-    <br>
-    <div class="animate-me" #box>
-      <ion-icon name="star"></ion-icon>      
-    </div>
-    <div class="white" #numerBtn></div>
-  </div>
-  <br>
-  <h1 text-center class="animated infinite rubberBand delay-1s">Example</h1>
-  <br>
-  <ion-list>
-      <ion-item *ngFor="let item of ['Uno', 'Dos', 'Tres']; let i = index;"
-        class="animated fadeInLeft">
-        Item {{ item }} - delay-{{ i }}s
-      </ion-item>
-  </ion-list>
+<ion-content padding class="animated zoomIn">
+  <ion-title text-center>Inicio</ion-title>
 </ion-content>

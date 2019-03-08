@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    </ion-buttons>
+    <ion-title>Transiciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="animated zoomIn">
+  <div class="transitions-screen">
+    <h6 class="white">Transiciones entre Pantallas</h6>
+    <button ion-button full round large (click)="slidePage()">Slide</button><br>
+    <button ion-button full round large (click)="flipPage()">Flip</button><br>
+    <button ion-button full round large (click)="fadePage()">Fade</button><br>
+    <button ion-button full round large (click)="curlPage()">Curl</button>
+  </div>
+</ion-content>
