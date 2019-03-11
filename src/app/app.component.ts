@@ -12,7 +12,6 @@ export class MyApp {
   routesSideMenu = [
     {route: 'HomePage', title: 'Inicio'},
     {route: 'AnimationsPage', title: 'Animaciones'},
-    {route: 'FormsPage', title: 'Formularios'},
     {route: 'TransitionsPage', title: 'Transiciones'},
   ]
 

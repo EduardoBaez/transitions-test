@@ -3,21 +3,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-third',
-  templateUrl: 'third.html',
+  selector: 'page-animations-into',
+  templateUrl: 'animations-into.html',
 })
-export class ThirdPage {
-
-  public type
+export class AnimationsIntoPage {
+  public data: Number
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.type = navParams.get('type')
+    this.data = navParams.get('data')
   }
 
-  ionViewDidLoad() {}
-
-  goBack = () => {
-    this.navCtrl.pop()
-  }
+  ionViewDidLoad() { }
 
 }
